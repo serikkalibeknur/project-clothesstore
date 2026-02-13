@@ -1,1 +1,2 @@
 JWT authentication complete
+JWT authentication implemented
