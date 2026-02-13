@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - Clothes Store</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1>Clothes Store</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="wishlist.html" id="wishlist-link" style="display: none;">Wishlist</a></li>
+                <li><a href="cart.html">Cart <span id="cart-count">0</span></a></li>
+                <li><a href="#" id="auth-link">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="breadcrumb">
+            <a href="index.html">Home</a> / <span id="product-breadcrumb">Product</span>
+        </div>
+
+        <div class="product-detail">
+            <div class="product-gallery">
+                <img id="main-image" src="" alt="Product Image" class="main-image">
+                <div class="image-thumbnails">
+                    <img src="" alt="Thumbnail" class="thumbnail active" onclick="changeImage(this.src)">
+                </div>
+            </div>
+
+            <div class="product-details">
+                <h1 id="product-title"></h1>
+                <div class="product-meta">
+                    <span id="product-category" class="category-badge"></span>
+                    <div class="rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="reviews">(0 reviews)</span>
+                    </div>
+                </div>
+
+                <div class="price-section">
+                    <span id="product-price" class="price"></span>
+                    <span id="product-old-price" class="old-price" style="display: none;"></span>
+                </div>
+
+                <p id="product-description" class="product-description"></p>
+
+                <div class="product-options">
+                    <div class="option-group">
+                        <label for="size">Size:</label>
+                        <select id="size">
+                            <option value="">Select Size</option>
+                            <option value="XS">XS</option>
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                            <option value="XXL">XXL</option>
+                        </select>
+                    </div>
+
+                    <div class="option-group">
+                        <label for="color">Color:</label>
+                        <select id="color">
+                            <option value="">Select Color</option>
+                            <option value="Black">Black</option>
+                            <option value="White">White</option>
+                            <option value="Blue">Blue</option>
+                            <option value="Red">Red</option>
+                            <option value="Green">Green</option>
+                        </select>
+                    </div>
+
+                    <div class="option-group">
+                        <label for="quantity">Quantity:</label>
+                        <input type="number" id="quantity" min="1" max="10" value="1">
+                    </div>
+                </div>
+
+                <div class="product-actions-detail">
+                    <button id="add-to-cart-btn" class="btn btn-primary btn-large">🛒 Add to Cart</button>
+                    <button id="add-to-favorites-btn" class="btn btn-secondary btn-large">❤ Add to Favorites</button>
+                </div>
+
+                <div class="product-info-box">
+                    <h3>Product Information</h3>
+                    <ul>
+                        <li><strong>SKU:</strong> <span id="product-sku"></span></li>
+                        <li><strong>Availability:</strong> <span id="product-stock">In Stock</span></li>
+                        <li><strong>Shipping:</strong> Free shipping on orders over $50</li>
+                        <li><strong>Returns:</strong> 30-day return policy</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <section class="related-products">
+            <h2>You Might Also Like</h2>
+            <div class="products-grid" id="related-products">
+                <div class="loading">Loading related products...</div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Clothes Store. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div id="notification" class="notification"></div>
+
+    <script src="js/main.js"></script>
+    <script src="js/products.js"></script>
+</body>
+</html>
